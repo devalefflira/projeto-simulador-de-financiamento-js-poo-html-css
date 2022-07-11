@@ -8,7 +8,21 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Simulador de Financiamento</h1>
+    <h1>
+      Simulador de Financiamento com Sistema de Amortização Constante (SAC)
+    </h1>
+    <input id="textoValor" type="text" placeholder="Valor do Bem" />
+    <input id="textoEntrada" type="text" placeholder="Valor da Entrada" />
+    <input id="textoTaxaJuros" type="text" placeholder="Taxa de Juros (%)" />
+    <input id="textoPrazo" type="text" placeholder="Prazo (em meses)" />
+    <button id="botaoCalcular">Calcular</button>
+    <input id="comCarencia" type="checkbox" /> Com carência?
+    <select id="listaSuspensa" hidden>
+      <option value="2">2 meses</option>
+      <option value="3">3 meses</option>
+      <option value="4">4 meses</option>
+    </select>
+
     <script src="./script.js"></script>
   </body>
 </html>
