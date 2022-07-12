@@ -1,4 +1,14 @@
 import { Financiamento } from './financiamento.js';
+import { Carencia } from './carencia.js';
+
+// Funções
+
+// Irá excluir a primeira linha da tabela enquanto linha houver.
+function limpaCorpoDaTabela() {
+  while (corpoTabela.firstChild) {
+    corpoTabela.removeChild(corpoTabela.firstChild);
+  }
+}
 
 // Variáveis - Elementos do Input - Manipulação desses elementos
 
@@ -30,17 +40,24 @@ comCarencia.addEventListener('change', function () {
 
 const corpoTabela = document.querySelector('#corpoTabela');
 
-// Criação de um Listener para o botão Calcular
+// Criação de um Listener para o botão Calcular e Manipulação do Botão
 
 const botaoCalcular = document.querySelector('#botaoCalcular');
 
 botaoCalcular.addEventListener('click', function () {
+  limpaCorpoDaTabela();
   const valor = parseFloat(textoValor.value);
   const entrada = parseFloat(textoEntrada.value);
   const taxaJuros = parseFloat(textoTaxaJuros.value);
   const prazo = parseFloat(textoPrazo.value);
   let simulacao;
-  simulacao = new Financiamento(valor, entrada, taxaJuros, prazo);
+  if (comCarencia.checked) {
+    const carencia = parseInt(listaSuspensa.value);
+    simulacao = new Carencia(valor, entrada, taxaJuros, prazo, carencia);
+  } else {
+    simulacao = new Financiamento(valor, entrada, taxaJuros, prazo);
+  }
+
   simulacao.calcParcelasMensais();
   simulacao.exibeParcelas();
 });
