@@ -11,18 +11,52 @@
     <h1>
       Simulador de Financiamento com Sistema de Amortização Constante (SAC)
     </h1>
-    <input id="textoValor" type="text" placeholder="Valor do Bem" />
-    <input id="textoEntrada" type="text" placeholder="Valor da Entrada" />
-    <input id="textoTaxaJuros" type="text" placeholder="Taxa de Juros (%)" />
-    <input id="textoPrazo" type="text" placeholder="Prazo (em meses)" />
-    <button id="botaoCalcular">Calcular</button>
-    <input id="comCarencia" type="checkbox" /> Com carência?
-    <select id="listaSuspensa" hidden>
-      <option value="2">2 meses</option>
-      <option value="3">3 meses</option>
-      <option value="4">4 meses</option>
-    </select>
-
+    <main class="container">
+      <input
+        class="input"
+        id="textoValor"
+        type="text"
+        placeholder="Valor do Bem"
+      />
+      <input
+        class="input"
+        id="textoEntrada"
+        type="text"
+        placeholder="Valor da Entrada"
+      />
+      <input
+        class="input"
+        id="textoTaxaJuros"
+        type="text"
+        placeholder="Taxa de Juros (%)"
+      />
+      <input
+        class="input"
+        id="textoPrazo"
+        type="text"
+        placeholder="Prazo (em meses)"
+      />
+      <button id="botaoCalcular">Calcular</button>
+      <input class="checkbox" id="comCarencia" type="checkbox" />
+      <label>Com carência?</label>
+      <select id="listaSuspensa" hidden>
+        <option value="2">2 meses</option>
+        <option value="3">3 meses</option>
+        <option value="4">4 meses</option>
+      </select>
+    </main>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Valor da Parcela</th>
+          <th>Amortização</th>
+          <th>Juros</th>
+          <th>Saldo Devedor</th>
+        </tr>
+      </thead>
+      <tbody id="corpoTabela"></tbody>
+    </table>
     <script type="module" src="./script.js"></script>
   </body>
 </html>

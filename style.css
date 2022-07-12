@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Code+Pro&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,81 @@
 }
 
 body {
-  color: #000000;
+  color: #f5f5f5;
   font-size: 1rem;
-  background-color: #f5f5f5;
+  background-color: #222222;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.input {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 250px;
+  height: 30px;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 100px;
+  height: 40px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #222222;
+  border: 3px solid #ffffff;
+  width: 120px;
+  height: 50px;
+  cursor: pointer;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+
+.checkbox {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+label {
+  margin-left: 20px;
+}
+
+select {
+  margin-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+tr:nth-child(even) {
+  background-color: #888888;
+}
+
+table,
+th,
+td {
+  margin-left: 20px;
+  margin-top: 50px;
+  border: 1px solid #ffffff;
+  border-collapse: collapse;
+  padding: 15px;
+  font-family: 'Source Code Pro', monospace;
 }

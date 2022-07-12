@@ -1,6 +1,6 @@
 import { Parcela } from './parcelas.js';
 
-class Financiamento {
+export class Financiamento {
   #taxaJuros;
   #prazo;
   #parcelas = [];
@@ -29,6 +29,16 @@ class Financiamento {
       this.#parcelas.push(
         new Parcela(numero, valor, juros, amortizacao, saldo)
       );
+    }
+  }
+  exibeParcelas() {
+    const parcelas = this.#parcelas.slice(1);
+    for (const parcela of parcelas) {
+      const linha = corpoTabela.insertRow(-1);
+      for (const dado of parcela.getDadosFormatados()) {
+        const celula = linha.insertCell(-1);
+        celula.textContent = dado;
+      }
     }
   }
 }
